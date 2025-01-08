@@ -1,8 +1,7 @@
-# Advanced Techniques: ROOT DataFrames and Pandas
+# Advanced Techniques: ROOT DataFrames
 
 In this tutorial, you will learn how to use DataFrames to speed up your analysis code.
-
-We cover ROOT's version of DataFrames, called RDFs, and Pandas, a popular Python library for data manipulation. The concepts are similar, but a lot of the syntax is different. Focus on the one that you know you will use on your project!
+We cover ROOT's version of DataFrames, called RDFs.
 
 # DataFrames, in general
 
@@ -26,12 +25,6 @@ for event in events:
 # RDF
 df = df.Filter("particles.pt > 10")
 df.Histo1D("particles.pt")
-```
-
-```python
-# pandas
-df = df[df['particles.pt'] > 10]
-df['particles.pt'].hist()
 ```
 
 # ROOT DataFrames
@@ -100,7 +93,3 @@ c.SaveAs("energy.png")
 ```
 
 > *Exercise*: run this script, and produce the energy histogram. How does it compare with the one from the previous tutorial? Write the analysis to extract the invariant mass of the dimuon system using RDFs. Try running over more events, and note the speed between the simple `for` loop and RDFs.
-
-# Pandas
-
-**TODO** to be written...
