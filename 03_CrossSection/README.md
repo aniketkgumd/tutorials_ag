@@ -1,6 +1,6 @@
 # $Z\rightarrow\mu\mu$ Cross-Section at the Z-Pole
 
-In this tutorial, we will explore the fundamentals to measure the cross-section of the $Z \rightarrow \mu\mu$ process at the Z-pole. The analysis strategy and selection is based on previous measurements done at the CERN [Large Electron Positron collider (LEP)](https://en.wikipedia.org/wiki/Large_Electron%E2%80%93Positron_Collider). You can find more information in [this paper](https://link.springer.com/article/10.1007/s100520050001) about the measurement done by the [L3 Collaboration](https://en.wikipedia.org/wiki/L3_experiment), one of the 4 major experiments at LEP.
+In this tutorial, we will explore the fundamentals to measure the cross-section of the $Z \rightarrow \mu\mu$ process at the Z-pole. The analysis strategy and selection is based on previous measurements done at the CERN [Large Electron Positron collider (LEP)](https://en.wikipedia.org/wiki/Large_Electron%E2%80%93Positron_Collider). You can find more information in [this paper](https://arxiv.org/abs/hep-ex/0002046) about the measurement done by the [L3 Collaboration](https://en.wikipedia.org/wiki/L3_experiment), one of the 4 major experiments at LEP.
 
 
 
@@ -69,7 +69,7 @@ cd mit-fcc/tutorials/03_CrossSection
 source /work/submit/jaeyserm/software/FCCAnalyses/setup.sh
 ```
 
-The samples, analysis logic, cuts, and histograms are defined in the `z_mumu_xsec.py` file. For this analysis, the signal sample is $Z \rightarrow \mu\mu$ (`wzp6_ee_mumu_ecm91p2`), and the backgrounds are `wzp6_ee_tautau_ecm91p2` and `p8_ee_gaga_mumu_ecm91p2`. The terminology for the sample names is as follows: `wzp6` means the Whizard event generator coupled to Pythia 6 for the hadronisation; `ee` means electron-positron initial state; `mumu` means the acual process, i.e. 2 muons (see lectures for the different processes and Feynman diagrams that can occur at the Z pole) and `ecm91p2` is the center-of-mass energy of 91.2 GeV (the Z pole). `p8` means the Pythia 8 event generator and hadronisation. Other event generators are also available such as `KKMCee` or `MadGraph`. Event generators differ by their theoretical implementation of the physical process or different numerical methods to evaluate the mathematical expressions.
+The samples, analysis logic, cuts, and histograms are defined in the `z_mumu_xsec.py` file. For this analysis, the signal sample is $Z \rightarrow \mu\mu$ (`wzp6_ee_mumu_ecm91p2`), and the backgrounds are `wzp6_ee_tautau_ecm91p2` and `p8_ee_gaga_mumu_ecm91p2`. The terminology for the sample names is as follows: `wzp6` means the Whizard event generator coupled to Pythia 6 for the hadronisation; `ee` means electron-positron initial state; `mumu` means the acual process, i.e. 2 muons (see lectures for the different processes and Feynman diagrams that can occur at the Z pole) and `ecm91p2` is the center-of-mass energy of 91.2 GeV (the Z pole). `p8` means the Pythia 8 event generator and hadronisation. Other event generators are also available such as `KKMCee` or `MadGraph`. Event generators differ by their theoretical implementation of the physical process or different numerical methods to evaluate the mathematical expressions. A full list of samples generated for FCC can be found [here](https://submit.mit.edu/~jaeyserm/fcc/samples/ee_FastSim_winter2023_IDEA.html).
 
 We'll adopt the following cuts, inspired by the reference paper above:
 
@@ -93,7 +93,7 @@ We now proceed to plot the different histograms and try to understand the physic
 To plot using `ROOT`, open the `plots_root.py` file and modify the `outdir` to point to your web area (and make this directory), then execute:
 
 ```shell
-fccanalysis plots plots.py
+fccanalysis plots plots_root.py
 ```
 
 This generates several plots in the specified `outdir`. Open the plots in your web browser and have a look, and see how they are configured in the `plots_root.py` file. To plot them using the second option, an example is given in the `plots_mpl4hep.py` file (again, modify the `outDir` in the file to point to your web area):
